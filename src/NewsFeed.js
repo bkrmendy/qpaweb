@@ -27,7 +27,7 @@ class NewsFeed extends Component {
       }
     }
     return (
-      <div>{postItems}</div>
+      <center>{postItems}</center>
     );
   }
 }

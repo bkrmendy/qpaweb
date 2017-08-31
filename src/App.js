@@ -8,7 +8,7 @@ class App extends Component {
     return (
       <div>
         <div className="background">
-          <canvas id="background" width="1920" height="1080" className={styles.a}>
+          <canvas id="background" width="1920" height="1080" className="a">
             this aint workin buddy
           </canvas>
         </div>
