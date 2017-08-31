@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Post from './Post.js'
-import styles from './qpaweb.css'
+import './qpaweb.css'
 
 class NewsFeed extends Component {
   constructor(){
@@ -23,11 +23,13 @@ class NewsFeed extends Component {
     var postItems = []
     if (this.state.posts) {
       for (var i = 0; i<this.state.posts.length; i++){
-        postItems.push(<Post title={this.state.posts[i].title} text={this.state.posts[i].body} /> )
+        postItems.push(<Post key={i} title={this.state.posts[i].title} text={this.state.posts[i].body} /> )
       }
     }
     return (
-      <center>{postItems}</center>
+      <div id="content" className="content">
+        {postItems}
+      </div>
     );
   }
 }
