@@ -6,14 +6,16 @@ import './qpaweb.css'
 class App extends Component {
   render() {
     return (
-      <div class="background">
-        <canvas id="background" width="1920" height="1080" class="a">
-          this aint workin buddy
-        </canvas>
+      <div>
+        <div class="background">
+          <canvas id="background" width="1920" height="1080" class="a">
+            this aint workin buddy
+          </canvas>
+        </div>
+        <MenuBar />
+        <NewsFeed />
       </div>
-      <MenuBar>
-      <NewsFeed>
-    );
+      );
   }
 }
 

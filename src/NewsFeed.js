@@ -21,7 +21,7 @@ class NewsFeed extends Component {
   render(){
     postItems = []
     for (var i = 0; i<posts.length; i++){
-      postItems.push(<Post title={posts[i].title} text={posts[i].text} )
+      postItems.push(<Post title={posts[i].title} text={posts[i].text} /> )
     }
     return postItems;
   }
