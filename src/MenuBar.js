@@ -1,18 +1,19 @@
 import React, { Component } from 'react';
 import MenuItem from './MenuItem.js'
-import './qpaweb.css'
+import styles from './qpaweb.css'
+import image from './image.png'
 
 class MenuBar extends Component {
   render(){
     return(
-      <div id="menu" class="menu">
-        <MenuItem title="Hírek" src="image.png" />
-        <MenuItem title="Csapatok" src="./image.png" />
-        <MenuItem title="Mérés" src="./image.png" />
-        <MenuItem title="Infó" src="./image.png" />
-        <MenuItem title="Achievementek" src="./image.png" />
-        <MenuItem title="Riddles" src="./image.png" />
-        <MenuItem title="Swarm" src="./image.png" />
+      <div id="menu" className="menu">
+        <MenuItem title="Hírek" src={image} />
+        <MenuItem title="Csapatok" src={image} />
+        <MenuItem title="Mérés" src={image} />
+        <MenuItem title="Infó" src={image} />
+        <MenuItem title="Achievementek" src={image} />
+        <MenuItem title="Riddles" src={image} />
+        <MenuItem title="Swarm" src={image} />
       </div>
     );
   }

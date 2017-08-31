@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import './qpaweb.css'
-import Post from './post.js'
+import Post from './Post.js'
+import styles from './qpaweb.css'
 
 class NewsFeed extends Component {
   constructor(){
@@ -15,7 +15,7 @@ class NewsFeed extends Component {
     fetch('https://jsonplaceholder.typicode.com/posts')
     .then(response => response.json())
     .then(json => {
-        this.state.posts = json
+        this.setState({posts: json});
       });
   }
 
