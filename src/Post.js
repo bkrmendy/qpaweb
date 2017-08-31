@@ -4,16 +4,14 @@ import './qpaweb.css'
 class Post extends Component {
   render(){
     return(
-      <div>
-      <div class="content__element-fade" />
-      <div id="content__element2" class="content__element">
-        <div class="content__element-title">
+      <div id="content__element" className="content__element">
+        <div className="content__element-title">
           {this.props.title}
         </div>
-        <div class="content__element-text">
+        <div className="content__element-text">
           {this.props.text}
         </div>
-      </div>
+        <div className="content__element-fade" />
       </div>
     );
   }

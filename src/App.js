@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import MenuBar from './MenuBar.js'
 import NewsFeed from './NewsFeed.js'
-import styles from './qpaweb.css'
+import './qpaweb.css'
 
 class App extends Component {
   render() {

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import MenuItem from './MenuItem.js'
-import styles from './qpaweb.css'
 import image from './image.png'
+import './qpaweb.css'
 
 class MenuBar extends Component {
   render(){
