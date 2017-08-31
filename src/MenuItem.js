@@ -10,6 +10,6 @@ class MenuItem extends Component {
           <a>{this.props.title}</a>
         </div>
       </div>
-    )
+    );
   }
 }

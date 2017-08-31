@@ -9,6 +9,6 @@ class Post extends Component {
       <div id="content__element2" class="content__element">
       <div class="content__element-title">{this.props.title}</div>
       <div class="content__element-text">{this.props.text}</div>
-    )
+    );
   }
 }
