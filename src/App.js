@@ -7,11 +7,11 @@ import './qpaweb.css';
 
 const Hirek = () =>  (<NewsFeed />)
 const Csapatok = () => (<p>Csapatok</p>)
-const Meres = () => (<p>Csapatok</p>)
-const Info = () => (<p>Csapatok</p>)
-const Achievementek = () => (<p>Csapatok</p>)
-const Riddles = () => (<p>Csapatok</p>)
-const Swarm = () => (<p>Csapatok</p>)
+const Meres = () => (<p>Meres</p>)
+const Info = () => (<p>Info</p>)
+const Achievementek = () => (<p>Achievementek</p>)
+const Riddles = () => (<p>Riddles</p>)
+const Swarm = () => (<p>Swarm</p>)
 
 const App = () => (
   <Router>
