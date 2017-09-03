@@ -12,10 +12,10 @@ class NewsFeed extends Component {
 
   componentDidMount(){
     //fetch('https://qpa.sch.bme.hu/api/news')
-    fetch('https://jsonplaceholder.typicode.com/posts')
+    fetch('https://sch-qpa.ml/api/news')
     .then(response => response.json())
     .then(json => {
-        this.setState({posts: json});
+        this.setState({posts: json.data});
       });
   }
 
@@ -23,7 +23,7 @@ class NewsFeed extends Component {
     var postItems = []
     if (this.state.posts) {
       for (var i = 0; i<this.state.posts.length; i++){
-        postItems.push(<Post key={i} title={this.state.posts[i].title} text={this.state.posts[i].body} /> )
+        postItems.push(<Post key={i} title={this.state.posts[i].title} text={this.state.posts[i].summary} /> )
       }
     }
     return (
