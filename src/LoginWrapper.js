@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import ReactSignupLoginComponent from 'react-signup-login-component';
-import App from './App.js'
 import './qpaweb.css'
 
 const LoginPage = (props) => {
@@ -10,7 +9,7 @@ const LoginPage = (props) => {
     };
     const loginWasClickedCallback = (data) => {
       console.log(data);
-      App.authenticate();
+      alert("authenticated")
     };
     const recoverPasswordWasClickedCallback = (data) => {
       console.log(data);

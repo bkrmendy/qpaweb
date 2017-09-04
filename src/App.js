@@ -3,31 +3,22 @@ import { BrowserRouter as Router, Route, Link, Redirect } from 'react-router-dom
 import MenuBar from './MenuBar.js';
 import NewsFeed from './NewsFeed.js';
 import LoginPage from './LoginWrapper.js'
+import Csapatok from './Csapatok.js'
+import Meres from './Meres.js'
+import Info from './Info.js'
+import Achievementek from './Achievementek.js'
+import Riddles from './Riddles.js'
+import Swarm from './Swarm.js'
+
+import { createStore } from 'redux'
 
 import './qpaweb.css';
 
-const Csapatok = () => (<p>Csapatok</p>)
-const Meres = () => (<p>Meres</p>)
-const Info = () => (<p>Info</p>)
-const Achievementek = () => (<p>Achievementek</p>)
-const Riddles = () => (<p>Riddles</p>)
-const Swarm = () => (<p>Swarm</p>)
-
-const auth = {
-  isAuthenticated: false,
-  authenticate(cb) {
-    this.isAuthenticated = true
-    setTimeout(cb, 100) // fake async
-  },
-  signout(cb) {
-    this.isAuthenticated = false
-    setTimeout(cb, 100)
-  }
-}
+//let store = createStore(App);
 
 const PrivateRoute = ({ component: Component, ...rest }) => (
   <Route {...rest} render={props => (
-    auth.isAuthenticated ? (
+    true ? (
       <Component {...props}/>
     ) : (
       <Redirect to={{

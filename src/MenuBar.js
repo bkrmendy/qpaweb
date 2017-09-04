@@ -7,13 +7,13 @@ class MenuBar extends Component {
   render(){
     return(
       <div id="menu" className="menu">
-        <MenuItem title="Hírek" src={image} />
-        <MenuItem title="Csapatok" src={image} />
-        <MenuItem title="Mérés" src={image} />
-        <MenuItem title="Infó" src={image} />
-        <MenuItem title="Achievementek" src={image} />
-        <MenuItem title="Riddles" src={image} />
-        <MenuItem title="Swarm" src={image} />
+        <MenuItem title="Hírek" src={image} to="/news"/>
+        <MenuItem title="Csapatok" src={image} to="/csapatok"/>
+        <MenuItem title="Mérés" src={image} to="/meres"/>
+        <MenuItem title="Infó" src={image} to="/info"/>
+        <MenuItem title="Achievementek" src={image} to="/achievements"/>
+        <MenuItem title="Riddles" src={image} to="/riddles"/>
+        <MenuItem title="Swarm" src={image} to="/swarm"/>
       </div>
     );
   }
