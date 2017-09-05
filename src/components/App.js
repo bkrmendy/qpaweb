@@ -10,8 +10,6 @@ import Achievementek from './Achievementek.js'
 import Riddles from './Riddles.js'
 import Swarm from './Swarm.js'
 
-import { createStore } from 'redux'
-
 import background_image from '../img/background.jpg';
 import foreground_image from '../img/background_front.png';
 
