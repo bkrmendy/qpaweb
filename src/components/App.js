@@ -12,7 +12,10 @@ import Swarm from './Swarm.js'
 
 import { createStore } from 'redux'
 
-import './qpaweb.css';
+import background_image from '../img/background.jpg';
+import foreground_image from '../img/background_front.png';
+
+import '../qpaweb.css';
 
 //let store = createStore(App);
 
@@ -39,24 +42,25 @@ class App extends Component {
   render(){
     return(
       <Router>
-      <div>
-      <div className="background">
-      <canvas id="background" width="1920" height="1080" className="a">
-      this aint workin buddy
-      </canvas>
-      </div>
-      <MenuBar />
+        <div>
+        <div className="background">
+          <img id="background_image" src={background_image} />
+        </div>
+        <div className="background">
+          <img id="background_front_image" src={foreground_image} />
+        </div>
+        <MenuBar />
 
-      <Route exact path="/" component={NewsFeed} />
-      <Route path="/news" component={NewsFeed} />
-      <Route path="/login" component={LoginPage} />
-      <PrivateRoute path="/csapatok" component={Csapatok} />
-      <PrivateRoute path="/meres" component={Meres} />
-      <PrivateRoute path="/info" component={Info} />
-      <PrivateRoute path="/achievements" component={Achievementek} />
-      <PrivateRoute path="/riddles" component={Riddles} />
-      <PrivateRoute path="/swarm" component={Swarm} />
-      </div>
+        <Route exact path="/" component={NewsFeed} />
+        <Route path="/news" component={NewsFeed} />
+        <Route path="/login" component={LoginPage} />
+        <PrivateRoute path="/csapatok" component={Csapatok} />
+        <PrivateRoute path="/meres" component={Meres} />
+        <PrivateRoute path="/info" component={Info} />
+        <PrivateRoute path="/achievements" component={Achievementek} />
+        <PrivateRoute path="/riddles" component={Riddles} />
+        <PrivateRoute path="/swarm" component={Swarm} />
+        </div>
       </Router>
     );
   }

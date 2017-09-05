@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 
-import './qpaweb.css';
+import '../qpaweb.css';
 
-export default class Meres extends Component {
+export default class Riddles extends Component {
 	render(){
 		return(
 			<div className="content" id="content">
-				Meres
+				Riddles
 			</div>
 		);
 	}

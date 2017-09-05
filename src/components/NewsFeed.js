@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Post from './Post.js'
-import './qpaweb.css'
+import '../qpaweb.css'
 
 class NewsFeed extends Component {
   constructor(){

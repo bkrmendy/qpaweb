@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import './qpaweb.css';
+import '../qpaweb.css';
 
 export default class Swarm extends Component {
 	render(){

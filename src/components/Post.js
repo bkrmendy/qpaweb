@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './qpaweb.css'
+import '../qpaweb.css'
 
 class Post extends Component {
   render(){

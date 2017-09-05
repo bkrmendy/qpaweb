@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ReactSignupLoginComponent from 'react-signup-login-component';
-import './qpaweb.css'
+import '../qpaweb.css'
 
 const LoginPage = (props) => {
     const signupWasClickedCallback = (data) => {
