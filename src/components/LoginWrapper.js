@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { withRouter } from 'react-router';
 import ReactSignupLoginComponent from 'react-signup-login-component';
 import '../qpaweb.css'
 
@@ -9,7 +10,8 @@ const LoginPage = (props) => {
     };
     const loginWasClickedCallback = (data) => {
       console.log(data);
-      alert("authenticated")
+      props.login()
+      window.location.href = window.location.protocol + window.location.host+ "/news";
     };
     const recoverPasswordWasClickedCallback = (data) => {
       console.log(data);
@@ -18,7 +20,7 @@ const LoginPage = (props) => {
     return (
       <div id="content" className="content">
             <ReactSignupLoginComponent
-                title="X. Schönherz QPA regisztráció!"
+                title="46. Schönherz QPA regisztráció!"
                 handleSignup={signupWasClickedCallback}
                 handleLogin={loginWasClickedCallback}
                 handleRecoverPassword={recoverPasswordWasClickedCallback}
@@ -27,4 +29,4 @@ const LoginPage = (props) => {
     );
 };
 
-export default LoginPage;
+export default withRouter(LoginPage);

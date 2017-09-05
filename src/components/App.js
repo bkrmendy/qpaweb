@@ -17,50 +17,83 @@ import foreground_image from '../img/background_front.png';
 
 import '../qpaweb.css';
 
-//let store = createStore(App);
-
-const PrivateRoute = ({ component: Component, ...rest }) => (
-  <Route {...rest} render={props => (
-    true ? (
-      <Component {...props}/>
-    ) : (
-      <Redirect to={{
-        pathname: '/login',
-        state: { from: props.location }
-      }}/>
-    )
-  )}/>
-)
-
 class App extends Component {
   constructor(){
     super();
     this.state = {
       loggedIn: false,
     }
+    this.login = this.login.bind(this);
   }
+
+  login(){
+    this.setState({loggedIn: true}, () => (console.log(this.state.loggedIn)));
+  }
+
   render(){
     return(
       <Router>
-        <div>
-        <div className="background">
-          <img id="background_image" src={background_image} />
-        </div>
-        <div className="background">
-          <img id="background_front_image" src={foreground_image} />
-        </div>
-        <MenuBar />
+      <div>
+      <div className="background">
+      <img id="background_image" src={background_image} />
+      </div>
+      <div className="background">
+      <img id="background_front_image" src={foreground_image} />
+      </div>
+      <MenuBar />
 
-        <Route exact path="/" component={NewsFeed} />
-        <Route path="/news" component={NewsFeed} />
-        <Route path="/login" component={LoginPage} />
-        <PrivateRoute path="/csapatok" component={Csapatok} />
-        <PrivateRoute path="/meres" component={Meres} />
-        <PrivateRoute path="/info" component={Info} />
-        <PrivateRoute path="/achievements" component={Achievementek} />
-        <PrivateRoute path="/riddles" component={Riddles} />
-        <PrivateRoute path="/swarm" component={Swarm} />
-        </div>
+      <Route exact path="/" component={NewsFeed} />
+      <Route path="/news" component={NewsFeed} />
+      <Route path="/login" component={()=>(<LoginPage login={() => this.login()} />)} />
+      <Route path="/csapatok" render={()=> {
+        if (this.state.loggedIn === true) {
+          return <Csapatok />;
+        }
+        else {
+          return <Redirect to="/login" />;
+        }
+      }}/>
+      <Route path="/meres" render={()=> {
+        if (this.state.loggedIn === true) {
+          return <Meres />;
+        }
+        else {
+          return <Redirect to="/login" />;
+        }
+      }}/>
+      <Route path="/info" render={()=> {
+        if (this.state.loggedIn === true) {
+          return <Info />;
+        }
+        else {
+          return <Redirect to="/login" />;
+        }
+      }}/>
+      <Route path="/achievements" render={()=> {
+        if (this.state.loggedIn === true) {
+          return <Achievementek />;
+        }
+        else {
+          return <Redirect to="/login" />;
+        }
+      }}/>
+      <Route path="/riddles" render={()=> {
+        if (this.state.loggedIn === true) {
+          return <Riddles />;
+        }
+        else {
+          return <Redirect to="/login" />;
+        }
+      }}/>
+      <Route path="/swarm" render={()=> {
+        if (this.state.loggedIn === true) {
+          return <Swarm />;
+        }
+        else {
+          return <Redirect to="/login" />;
+        }
+      }}/>
+      </div>
       </Router>
     );
   }

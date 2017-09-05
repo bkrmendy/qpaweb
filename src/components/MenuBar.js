@@ -14,6 +14,7 @@ class MenuBar extends Component {
         <MenuItem title="Achievementek" src={image} to="/achievements"/>
         <MenuItem title="Riddles" src={image} to="/riddles"/>
         <MenuItem title="Swarm" src={image} to="/swarm"/>
+        <MenuItem title="Login" src={image} to="/login"/>
       </div>
     );
   }
