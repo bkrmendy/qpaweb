@@ -8,21 +8,27 @@ body {
   height: 100%;
 }
 
-.background {
-  position: fixed;
-  top: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
+.para_wrapper{
+  position:fixed;
+  top:-150px;
+  width:50%;
+  height:10vh;
+  left:-200px;
 }
 
-.background img {
+.background-img {
   object-fit: cover;
   position: relative;
-  max-width: 100%;
-  height: 100%;
-  transform: translate(0, 0);
+  width: 50%;
+  height: 100vh;
+}
+
+.background-front-image{
+  object-fit: cover;
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background-blend-mode:multiply;
 }
 
 .menu {
@@ -56,7 +62,6 @@ body {
   background: #999;
   display: flex;
   flex-direction: column;
-  //justify-content: space-between;
   cursor: pointer;
   box-sizing: border-box;
 }
@@ -93,9 +98,10 @@ body {
   .menu {
     background: #999;
     height: 100%;
+    top: -100%;
     left: 0;
     flex-direction: column;
-    transform: translate(0, -100%);
+    transform: translate(0, 0);
     -webkit-transition: -webkit-transform cubic-bezier(.5,0,.3,1) .4s;
     transition: transform cubic-bezier(.5,0,.3,1) .4s;
   }
@@ -161,13 +167,9 @@ body {
   margin: 25px 0 25px 0;
   background: #999;
   max-height: 100px;
-  -webkit-transition: max-height cubic-bezier(.5,0,.3,1) .4s;
-  transition: max-height cubic-bezier(.5,0,.3,1) .4s;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
   overflow: hidden;
-}
-
-.content__element:hover {
-  max-height: 2000px;
 }
 
 .content__element-title {
