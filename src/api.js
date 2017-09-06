@@ -13,6 +13,7 @@ const postFetchRequest = (url, body, authHeader = '') => {
     var headers = {
       'Accept': 'application/json',
       'Content-Type': 'application/json',
+      'Authorization': authHeader,
     }
   }
   fetch(url,
@@ -33,7 +34,7 @@ const getFetchRequest = (url, authHeader = '') => {
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin':'*'
+        'Access-Control-Allow-Origin':'*',
         'Authorization': authHeader,
       },
       method: "GET",
