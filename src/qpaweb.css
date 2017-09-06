@@ -28,6 +28,7 @@ body {
   z-index: 3;
   max-height: 160px; }
   .menu__element-container {
+    background-image: 'images/flag.png';
     width: 10%;
     min-width: 100px; }
     .menu__element-container:hover .menu__element {

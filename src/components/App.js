@@ -32,10 +32,10 @@ class App extends Component {
     return(
       <Router>
       <div>
-      <div className="background">
+      <div className="background-img">
       <img id="background_image" src={background_image} alt="background"/>
       </div>
-      <div className="background">
+      <div className="background-img">
       <img id="background_front_image" src={foreground_image} alt="foreground, looks really cool"/>
       </div>
       <MenuBar />
