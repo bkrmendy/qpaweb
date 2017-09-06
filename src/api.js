@@ -1,48 +1,33 @@
 //UTILS
 
 const postFetchRequest = (url, body, authHeader = '') => {
-  var result = {};
-  if (authHeader != '') {
-    var headers =
-    {
-      'Accept': 'application/json',
-      'Content-Type': 'application/json',
-    }
-  }
-  else {
-    var headers = {
+  return fetch(url,
+  {
+    headers: {
       'Accept': 'application/json',
       'Content-Type': 'application/json',
       'Authorization': authHeader,
-    }
-  }
-  fetch(url,
-  {
-    headers: headers,
+    },
     method: "POST",
     body: JSON.stringify(body)
   }).then(res => res.json())
-  .then(json => result = json)
+  .then(json => {return json})
   .catch(res => alert(res));
-  return result;
 }
 
 const getFetchRequest = (url, authHeader = '') => {
-  var result = {};
-  fetch(url,
+  return fetch(url,
     {
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin':'*',
         'Authorization': authHeader,
       },
       method: "GET",
     })
   .then(response => response.json())
-  .then(json => {result = json})
+  .then(json => {return json})
   .catch(response => alert(response));
-  return result;
 }
 
 const url = 'https://sch-qpa.ml/api/';
@@ -51,46 +36,59 @@ const url = 'https://sch-qpa.ml/api/';
 
 // provider auth: via links in html
 
-const postMobileAuth = (user_email, user_password) => {
+const postMobileAuth = (user_email, user_password, callback) => {
+
   const endpoint = url + 'auth/mobile';
   var body = {email: user_email, b: user_password};
-  return postFetchRequest(endpoint, body)
+  postFetchRequest(endpoint, body).then(ret => callback(ret));
+
 }
 
-const postUserLogin = (user_email, user_password) => {
+const postUserLogin = (user_email, user_password, callback) => {
+
   const endpoint = url + 'auth/login';
   const body = {email: user_email, b: user_password};
-  return postFetchRequest(endpoint, body);
+  postFetchRequest(endpoint, body).then(ret => callback(ret));
+
 }
 
 // NEWS
 
-const getNewsItems = (pagination = true) => {
-  const endpoint = url + '/news.json' + (pagination ? '' : '?all');
-  return getFetchRequest(endpoint);
+const getNewsItems = (pagination = true, callback) => {
+
+  const endpoint = url + 'news' + (pagination ? '' : '?all');
+  getFetchRequest(endpoint).then(ret => callback(ret));
+
 }
 
-const getNewsItem = (id) => {
-  const endpoint = url + 'auth/news/' + id;
-  return getFetchRequest(endpoint);
+const getNewsItem = (id, callback) => {
+
+  const endpoint = url + 'news/' + id;
+  getFetchRequest(endpoint).then(ret => callback(ret));
+
 }
 
-const getNewsItemComments = (id, authToken) => {
-  const endpoint = url + 'auth/newsComments/' + id;
+const getNewsItemComments = (id, authToken, callback) => {
+
+  const endpoint = url + 'newsComments/' + id;
   const authHeader = "Bearer " + authToken;
-  return getFetchRequest(endpoint, authHeader);
+  getFetchRequest(endpoint, authHeader).then(ret => callback(ret));
+
 }
 
-const postCreateNewsComment = (id, text) => {
+const postCreateNewsComment = (id, text, callback) => {
+
   const endpoint = url + "/newsComments";
   const body = {news: id, comment: text};
-  return postFetchRequest(url, body);
+  postFetchRequest(url, body).then(ret => callback(ret));
+
 }
 
-const patchNewsComment = (id, comment, authKey) => {
-  const endpoint = url + "newsComments" + id;
+const patchNewsComment = (id, comment, authKey, callback) => {
+
+  const endpoint = url + "newsComments/" + id;
   const authHeader = "Bearer " + authKey;
-  return fetch(endpoint,
+  fetch(endpoint,
   {
     headers: {
       'Accept': 'application/json',
@@ -100,87 +98,112 @@ const patchNewsComment = (id, comment, authKey) => {
     method: "PATCH",
     body: JSON.stringify(body)
   }).then(res => {return res.json()})
-  .catch(res => alert(res));
+  .catch(res => alert(res)).then(ret => callback(ret));
+
 
 }
 
 // TEAM MANAGEMENT
 
 const getTeamAcceptMember = (authKey, userID) => {
+
   const endpoint = url + "teams/" + userID + "/accept";
   const authHeader = "Bearer " + authKey;
-  return postFetchRequest(endpoint, authHeader);
+  postFetchRequest(endpoint, authHeader).then(ret => callback(ret));
+
 }
 
-const getTeamMembers = (teamID, authKey) => {
+const getTeamMembers = (teamID, authKey, callback) => {
+
   const endpoint = url + "teams/" + teamID + "/members";
   const authHeader = "Bearer " + authKey;
-  return postFetchRequest(endpoint, authHeader);
+  postFetchRequest(endpoint, authHeader).then(ret => callback(ret));
+
 }
 
-const postCreateNewTeam = (authKey, teamName, teamDescription) => {
+const postCreateNewTeam = (authKey, teamName, teamDescription, callback) => {
+
   const endpoint = url + "teams/";
   const authHeader = "Bearer " + authKey;
   const body = {name: teamName, description: teamDescription};
-  return postFetchRequest(endpoint, body, authHeader);
+  postFetchRequest(endpoint, body, authHeader).then(ret => callback(ret));
+
 }
 
-const getDeclineMember = (authKey, userID) => {
+const getDeclineMember = (authKey, userID, callback) => {
+
   const endpoint = url + "teams/" + userID + "/decline";
   const authHeader = "Bearer " + authKey;
-  return postFetchRequest(endpoint, authHeader);
+  postFetchRequest(endpoint, authHeader).then(ret => callback(ret));
+
 }
 
-const getJoinTeam = (authKey, teamID) => {
+const getJoinTeam = (authKey, teamID, callback) => {
+
   const endpoint = url + "teams/" + teamID + "/join";
   const authHeader = "Bearer " + authKey;
-  return getFetchRequest(endpoint, authHeader);
+  getFetchRequest(endpoint, authHeader).then(ret => callback(ret));
+
 }
 
-const getLeaveTeam = (authKey) => {
+const getLeaveTeam = (authKey, callback) => {
+
   const endpoint = url + "teams/leave";
   const authHeader = "Bearer " + authKey;
-  return getFetchRequest(endpoint, authHeader);
+  getFetchRequest(endpoint, authHeader).then(ret => callback(ret));
+
 }
 
-const getListOfTeams = () => {
+const getListOfTeams = (, callback) => {
+
   const endpoint = url + "teams"
-  return getFetchRequest(endpoint);
+  getFetchRequest(endpoint).then(ret => callback(ret));
+
 }
 
-const getTeamPendingMembers = (authKey, teamID) => {
+const getTeamPendingMembers = (authKey, teamID, callback) => {
+
   const endpoint = url + "teams/" + teamID + "/pending/members";
   const authHeader = "Bearer " + authKey;
-  return getFetchRequest(endpoint, authHeader);
+  getFetchRequest(endpoint, authHeader).then(ret => callback(ret));
+
 }
 
-const getRemoveMemberFromTeam = (authKey, userID) => {
+const getRemoveMemberFromTeam = (authKey, userID, callback) => {
+
   const endpoint = url + "teams/" + user + "/remove";
   const authHeader = "Bearer " + authKey;
-  return getFetchRequest(endpoint, authHeader);
+  getFetchRequest(endpoint, authHeader).then(ret => callback(ret));
+
 }
 
-const showTeam = (teamID) => {
+const showTeam = (teamID, callback) => {
+
   const endpoint = url + "teams/" + teamID;
-  return getFetchRequest(endpoint);
+  getFetchRequest(endpoint).then(ret => callback(ret));
+
 }
 
 // USER MANAGEMENT
 
-const postCreateUser = (userName, userNick, userEmail, userPw, userPw_conf) => {
+const postCreateUser = (userName, userNick, userEmail, userPw, userPw_conf, callback) => {
+
   const endpoint = url + 'users';
   var body = {
-    name: userName.
+    name: userName,
     nick: userNick,
     email: userEmail,
     password: userPw,
     password_confirmation: userPw_conf,
   };
-  return postFetchRequest(endpoint, body);
+  postFetchRequest(endpoint, body).then(ret => callback(ret));
+
 }
 
-const getUserInfo = (accessToken) => {
+const getUserInfo = (accessToken, callback) => {
+
   const endpoint = url + 'users/' + id;
   const authHeader = "Bearer " + accessToken;
-  return getFetchRequest(endpoint, authHeader);
+  getFetchRequest(endpoint, authHeader).then(ret => callback(ret));
+
 }
