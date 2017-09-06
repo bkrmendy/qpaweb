@@ -4,9 +4,6 @@ import ReactSignupLoginComponent from 'react-signup-login-component';
 import '../qpaweb.css'
 
 class LoginPage extends Component {
-    constructor(props){
-      super(props);
-    }
     signupWasClickedCallback = (data) => {
       console.log(data);
       alert('Signup callback, see log on the console to see the data.');

@@ -9,4 +9,8 @@
 * user profile page
 * news detail page (single news item w/ comments)
 * user login/logout button
+* sponsors page
 
+## design
+* art for menu items
+* css for components

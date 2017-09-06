@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Link, Redirect } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
 import MenuBar from './MenuBar.js';
 import NewsFeed from './NewsFeed.js';
 import LoginPage from './LoginWrapper.js'
@@ -21,11 +21,10 @@ class App extends Component {
     this.state = {
       loggedIn: false,
     }
-    this.login = this.login.bind(this);
   }
 
   login(){
-    this.setState({loggedIn: true}, () => (console.log(this.state.loggedIn)));
+    this.setState({loggedIn: true});
   }
 
   render(){
@@ -33,10 +32,10 @@ class App extends Component {
       <Router>
       <div>
       <div className="background">
-      <img id="background_image" src={background_image} />
+      <img id="background_image" src={background_image} alt="background"/>
       </div>
       <div className="background">
-      <img id="background_front_image" src={foreground_image} />
+      <img id="background_front_image" src={foreground_image} alt="foreground, looks really cool"/>
       </div>
       <MenuBar />
 
