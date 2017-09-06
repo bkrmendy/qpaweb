@@ -2,6 +2,10 @@
 
 const url = 'https://sch-qpa.ml/api/';
 
+// AUTENTICATION
+
+// provider auth: via links in html
+
 const postMobileAuth = (user_email, user_password) => {
   const endpoint = url + 'auth/mobile';
   fetch(endpoint,
@@ -32,6 +36,8 @@ const postUserLogin = (user_email, user_password) => {
   .catch(res => alert(res));
 }
 
+// NEWS
+
 const getNewsItems = (pagination = true) => {
   const endpoint = url + 'auth/news' + (pagination ? '' : '?all');
   fetch(endpoint)
@@ -52,6 +58,8 @@ const getNewsItemComments = (id) => {
   .then(response => return response.json())
   .catch(response => alert(response));
 }
+
+// USER MANAGEMENT
 
 const postCreateUser = (userName, userNick, userEmail, userPw, userPw_conf) => {
   const endpoint = url + 'users';
@@ -89,3 +97,5 @@ const getUserInfo = (accessToken) => {
   .then(response => return response.json())
   .catch(response => alert(response));
 }
+
+// TEAM MANAGEMENT
