@@ -1,14 +1,14 @@
 # todos
 ## api
 * teams
-* users
+* users
 * news
 
 ## components
 * team registration
 * user profile page
 * news detail page (single news item w/ comments)
-* user login/logout button
+* user login/logout button
 * sponsors page
 
 ## design
