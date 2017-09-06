@@ -14,3 +14,4 @@
 ## design
 * art for menu items
 * css for components
+* new favicon.ico (még mindig a react logo van bent :D )
