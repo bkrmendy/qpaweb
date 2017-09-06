@@ -9,6 +9,7 @@ import Info from './Info.js'
 import Achievementek from './Achievementek.js'
 import Riddles from './Riddles.js'
 import Swarm from './Swarm.js'
+import Sponsors from './Sponsors.js'
 
 import background_image from '../img/background.jpg';
 import foreground_image from '../img/background_front.png';
@@ -41,6 +42,7 @@ class App extends Component {
 
       <Route exact path="/" component={NewsFeed} />
       <Route path="/news" component={NewsFeed} />
+      <Route path="/sponsors" component={Sponsors} />
       <Route path="/login" component={()=>(<LoginPage login={() => this.login()} />)} />
       <Route path="/csapatok" render={()=> {
         if (this.state.loggedIn === true) {

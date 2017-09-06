@@ -1,0 +1,247 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+$item_background: rgba(30, 30, 40, .8);
+$text_color: #ffffff;
+$accent_color: #2959a5;
+$text_font: "Open Sans";
+$spec_font: "Open Sans";
+
+canvas {
+  position: absolute;
+}
+
+body {
+  height: 100%;
+}
+
+.background-img {
+  z-index: -1;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+  align-items: stretch;
+  z-index: 3;
+  max-height: 160px;
+
+  &__element-container {
+    width: 10%;
+    min-width: 100px;
+
+    &:hover {
+      .menu__element {
+        transform: translate(0, 0);
+      }
+    }
+  }
+
+  &__element {
+    position: relative;
+    width: 100%;
+    padding: 1em .6em 40px .6em;
+    transform: translate(0, -60%);
+    -webkit-transition: -webkit-transform cubic-bezier(.5,0,.3,1) .4s;
+    transition: transform cubic-bezier(.5,0,.3,1) .4s;
+    background: $item_background;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    box-sizing: border-box;
+
+    img {
+      object-fit: contain;
+      width: 80%;
+      position: relative;
+      bottom: 0;
+      margin: 0 0 1em 0;
+      align-self: center;
+    }
+
+    a {
+      font-size: 1.2vw;
+      text-align: center;
+      color: $text_color;
+      font-family: $text_font;
+      align-self: center;
+
+      @media screen and (max-width: 1000px) {
+        font-size: 18px;
+      }
+    }
+  }
+
+  &__opener {
+    display: none;
+    z-index: 2;
+  }
+}
+
+.content {
+  position: relative;
+  top: 100px;
+  height: 100%;
+  margin: 50px 10%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__post {
+    position: relative;
+    width: 80%;
+    min-width: 400px;
+    min-height: 100px;
+    margin: 25px 0 25px 0;
+    background: $item_background;
+    max-height: 100px;
+    -webkit-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
+    overflow: hidden;
+
+    &-title {
+      font-size: 18px;
+      text-align: left;
+      color: $text_color;
+      margin: 1em 1em .5em 1.5em;
+      font-family: $text_font;
+    }
+
+    &-text {
+      font-size: 12px;
+      text-align: left;
+      color: $text_color;
+      margin: 1em 2em 3em 3.5em;
+      font-family: $text_font;
+    }
+
+    &-fade {
+      position: absolute;
+      bottom: 0;
+      height: 1.8em;
+      width: 100%;
+      background: linear-gradient(rgba(30,30,40,0), rgba(30,30,40,1) 80%);
+    }
+  }
+
+  &__sponsors {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+
+    &-item {
+      padding: 10px;
+      &.big {
+        height: 300px;
+      }
+
+      &.medium {
+        height: 200px;
+      }
+
+      &.small {
+        height: 100px;
+      }
+
+      img {
+        height: 100%;
+        object-fit: contain;
+      }
+    }
+
+    &-tier {
+      flex: 0 0 100%;
+      color: $text_color;
+      font-family: $spec_font;
+      text-align: center;
+
+      &.big {
+        height: 1.5em;
+        font-size: 10vw;
+      }
+
+      &.medium {
+        height: 1.5em;
+        font-size: 7vw;
+      }
+
+      &.small {
+        height: 1.5em;
+        font-size: 3.5vw;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .menu {
+    background: $item_background;
+    height: 100%;
+    top: -100%;
+    left: 0;
+    flex-direction: column;
+    transform: translate(0, 0);
+    -webkit-transition: -webkit-transform cubic-bezier(.5,0,.3,1) .4s;
+    transition: transform cubic-bezier(.5,0,.3,1) .4s;
+    max-height: none;
+
+    &__opener {
+      display: block;
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: 80px;
+      font-size: 18px;
+      text-align: center;
+      padding: calc((80px + -1em) / 2);
+      box-sizing: border-box;
+      color: $text_color;
+      background: $item_background;
+      font-family: $spec_font;
+    }
+
+    &__element-container {
+      position: relative;
+      flex-grow: 1;
+      width: 100%;
+    }
+
+    &__element-container:hover .menu__element {
+    }
+
+    &__element {
+      height: 100%;
+      background: none;
+      position: absolute;
+      padding: 0;
+      transform: translate(0, 0);
+      flex-direction: row;
+      justify-content: start;
+
+      img {
+        object-fit: contain;
+        max-height: 100%;
+        width: auto;
+        margin: 0 1em 0 10%;
+      }
+    }
+  }
+}

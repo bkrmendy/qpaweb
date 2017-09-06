@@ -9,6 +9,7 @@ class MenuBar extends Component {
       <center id="menu" className="menu">
         <MenuItem title="Hírek" src={image} to="/news"/>
         <MenuItem title="Csapatok" src={image} to="/csapatok"/>
+        <MenuItem title="Szponzorok" src={image} to="/sponsors"/>
         {/*
         <MenuItem title="Mérés" src={image} to="/meres"/>
         <MenuItem title="Infó" src={image} to="/info"/>
