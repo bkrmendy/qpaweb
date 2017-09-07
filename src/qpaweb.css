@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Open+Sans");
+@import url("https://fonts.googleapis.com/css?family=Tangerine");
 canvas {
   position: absolute; }
 
@@ -33,13 +33,15 @@ body {
     .menu__element-container:hover .menu__element {
       transform: translate(0, 0); }
   .menu__element {
+    background-image: url("./img/flags-kek-erme.png");
+    background-size: contain;
+    background-repeat: no-repeat;
     position: relative;
     width: 100%;
     padding: 1em .6em 40px .6em;
     transform: translate(0, -60%);
     -webkit-transition: -webkit-transform cubic-bezier(0.5, 0, 0.3, 1) 0.4s;
     transition: transform cubic-bezier(0.5, 0, 0.3, 1) 0.4s;
-    background: rgba(30, 30, 40, 0.8);
     display: flex;
     flex-direction: column;
     cursor: pointer;
@@ -52,10 +54,10 @@ body {
       margin: 0 0 1em 0;
       align-self: center; }
     .menu__element a {
-      font-size: 1.2vw;
+      font-size: 18px;
       text-align: center;
-      color: #ffffff;
-      font-family: "Open Sans";
+      color: yellow;
+      font-family: "Tangerine";
       align-self: center; }
       @media screen and (max-width: 1000px) {
         .menu__element a {
@@ -88,13 +90,13 @@ body {
       text-align: left;
       color: #ffffff;
       margin: 1em 1em .5em 1.5em;
-      font-family: "Open Sans"; }
+      font-family: "Tangerine"; }
     .content__post-text {
       font-size: 12px;
       text-align: left;
       color: #ffffff;
       margin: 1em 2em 3em 3.5em;
-      font-family: "Open Sans"; }
+      font-family: "Tangerine"; }
     .content__post-fade {
       position: absolute;
       bottom: 0;
@@ -124,7 +126,7 @@ body {
     .content__sponsors-tier {
       flex: 0 0 100%;
       color: #ffffff;
-      font-family: "Open Sans";
+      font-family: "Tangerine";
       text-align: center; }
       .content__sponsors-tier.big {
         height: 1.5em;
@@ -160,7 +162,7 @@ body {
       box-sizing: border-box;
       color: #ffffff;
       background: rgba(30, 30, 40, 0.8);
-      font-family: "Open Sans"; }
+      font-family: "Tangerine"; }
     .menu__element-container {
       position: relative;
       flex-grow: 1;

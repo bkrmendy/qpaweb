@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import Post from './Post.js'
+
+import { getNewsItems } from '../api.js';
+
 import '../qpaweb.css'
 
 class NewsFeed extends Component {
@@ -8,15 +11,15 @@ class NewsFeed extends Component {
     this.state = {
       posts: null,
     }
+    this.update = this.update.bind(this);
+  }
+
+  update(json){
+    this.setState({posts: json.data});
   }
 
   componentDidMount(){
-    //fetch('https://qpa.sch.bme.hu/api/news')
-    fetch('https://sch-qpa.ml/api/news')
-    .then(response => response.json())
-    .then(json => {
-        this.setState({posts: json.data});
-      });
+    getNewsItems(this.update);
   }
 
   render(){
