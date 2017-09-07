@@ -1,10 +1,11 @@
-@import url('https://fonts.googleapis.com/css?family=Tangerine');
+//@import url('https://fonts.googleapis.com/css?family=Tangerine');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
 
 $item_background: rgba(30, 30, 40, .8);
 $text_color: #ffffff;
 $accent_color: #2959a5;
-$text_font: "Tangerine";
-$spec_font: "Tangerine";
+$text_font: "Open Sans";
+$spec_font: "Open Sans";
 
 canvas {
   position: absolute;
@@ -78,7 +79,7 @@ body {
     a {
       font-size: 18px;
       text-align: center;
-      color: yellow;
+      color: $text_color;
       font-family: $text_font;
       align-self: center;
 

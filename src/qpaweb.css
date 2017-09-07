@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Tangerine");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans");
 canvas {
   position: absolute; }
 
@@ -56,8 +56,8 @@ body {
     .menu__element a {
       font-size: 18px;
       text-align: center;
-      color: yellow;
-      font-family: "Tangerine";
+      color: #ffffff;
+      font-family: "Open Sans";
       align-self: center; }
       @media screen and (max-width: 1000px) {
         .menu__element a {
@@ -90,13 +90,13 @@ body {
       text-align: left;
       color: #ffffff;
       margin: 1em 1em .5em 1.5em;
-      font-family: "Tangerine"; }
+      font-family: "Open Sans"; }
     .content__post-text {
       font-size: 12px;
       text-align: left;
       color: #ffffff;
       margin: 1em 2em 3em 3.5em;
-      font-family: "Tangerine"; }
+      font-family: "Open Sans"; }
     .content__post-fade {
       position: absolute;
       bottom: 0;
@@ -126,7 +126,7 @@ body {
     .content__sponsors-tier {
       flex: 0 0 100%;
       color: #ffffff;
-      font-family: "Tangerine";
+      font-family: "Open Sans";
       text-align: center; }
       .content__sponsors-tier.big {
         height: 1.5em;
@@ -162,7 +162,7 @@ body {
       box-sizing: border-box;
       color: #ffffff;
       background: rgba(30, 30, 40, 0.8);
-      font-family: "Tangerine"; }
+      font-family: "Open Sans"; }
     .menu__element-container {
       position: relative;
       flex-grow: 1;
