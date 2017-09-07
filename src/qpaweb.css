@@ -28,8 +28,6 @@ body {
   z-index: 3;
   max-height: 160px; }
   .menu__element-container {
-    background-image: url("./img/flags-kek-kard.png");
-    background-repeat: no-repeat;
     width: 10%;
     min-width: 100px; }
     .menu__element-container:hover .menu__element {
@@ -111,10 +109,9 @@ body {
     justify-content: center;
     align-items: center; }
     .content__sponsors-item {
-      margin: 50px;
       padding: 10px;
-      background-color: white;
-    }
+      margin: 50px;
+      background-color: white; }
       .content__sponsors-item.big {
         height: 300px; }
       .content__sponsors-item.medium {
