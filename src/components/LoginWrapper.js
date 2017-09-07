@@ -5,18 +5,18 @@ import '../qpaweb.css'
 
 class LoginPage extends Component {
     signupWasClickedCallback = (data) => {
-      console.log(data);
-      alert('Signup callback, see log on the console to see the data.');
+      alert(data.username + ", your quest has not begun yet...");
     };
     loginWasClickedCallback = (data) => {
+      /*
       this.props.login()
       this.props.history.push('/news');
-      //window.location.href = window.location.protocol + window.location.host+ "/news";
       console.log(this);
+      */
+      alert(data.username + ", your quest has not begun yet...");
     };
     recoverPasswordWasClickedCallback = (data) => {
-      console.log(data);
-      alert('Recover password callback, see log on the console to see the data.');
+      alert(data.username + ", your quest has not begun yet...");
     };
 
     render (){
