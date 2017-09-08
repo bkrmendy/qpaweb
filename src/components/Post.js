@@ -10,7 +10,7 @@ class Post extends Component {
   		let height_of_text = parseInt(window.getComputedStyle(text_of_item).height, 10);
   		let new_height = height_of_item + height_of_text;
 			e.currentTarget.classList.add("opened");
-			e.currentTarget.style.maxHeight = `${new_height-10}px`;
+			e.currentTarget.style.maxHeight = `${new_height}px`;
 		}
 		else if(e.currentTarget.classList.contains("opened")){
 			e.currentTarget.classList.remove("opened");

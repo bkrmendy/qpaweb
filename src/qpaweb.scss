@@ -130,7 +130,7 @@ h2 {
     overflow: hidden;
 
     &-title {
-      font-size: 18px;
+      font-size: calc(18px + .5vw);
       text-align: left;
       color: $text_color;
       margin: 1em 1em .5em 1.5em;
@@ -158,13 +158,12 @@ h2 {
   }
 
   &__sponsors {
-    height: 100%;
     padding: 10vw;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    background: rgba(30,30,40,.5);
+    background: rgba(30,30,40,.7);
 
     &-item {
       filter: brightness(0) invert(1);
@@ -215,6 +214,31 @@ h2 {
         height: 1.5em;
         font-size: calc(16px + 3.5vw);
       }
+    }
+  }
+
+  &__news {
+    display: flex;
+    flex-direction: column;
+
+    &-title {
+      font-size: calc(18px + .5vw);
+      text-align: left;
+      color: $text_color;
+      margin: 1em 1em .5em 1.5em;
+      font-family: $spec_font;
+    }
+
+    &-text {
+      font-size: 12px;
+      text-align: left;
+      color: $text_color;
+      margin: 1em 2em 3em 3.5em;
+      font-family: $text_font;
+    }
+
+    &-comment {
+      margin: .5em .5em 0 3vw;
     }
   }
 }
