@@ -4,7 +4,6 @@ import '../qpaweb.css'
 
 class MenuItem extends Component {
   handleClick(e) {
-    console.log("ASDASD");
     document.getElementById('menu').classList.remove('opened');
   }
 

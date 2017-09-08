@@ -2,7 +2,7 @@ $(document).ready(function(){
 	$(".content__element").click(function(){
 		let $this = $(this);
 		let classes = this.className.split(' ');
-		let height_of_item = parseInt($this.css("height"), 10);	
+		let height_of_item = parseInt($this.css("height"), 10);
 		let text_of_item = $this.children().eq(1);
 		let height_of_text = parseInt(text_of_item.css("height"), 10);
 		let new_height = height_of_item + height_of_text;
