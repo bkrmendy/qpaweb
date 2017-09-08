@@ -34,7 +34,7 @@ class Post extends Component {
     return(
       <div id="content__element" className="content__post" onClick={this.handleClick}>
         <div className="content__post-title">
-          <h2>{this.props.id}</h2>
+          <h2>{this.props.title}</h2>
         </div>
         <div className="content__post-text">
           <h4>{this.props.text}</h4>

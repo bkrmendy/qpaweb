@@ -36,7 +36,6 @@ class NewsItem extends Component {
       for (var i = 0; i<this.state.comments.length; i++) {
         var name = this.state.comments[i].user_name;
         var comment = this.state.comments[i].comment;
-        console.log(name + " " + comment);
         comments.push(<Comment className="content__post-fade" key={i} username={name} comment={comment} />);
       }
     }

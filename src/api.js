@@ -164,7 +164,7 @@ const getLeaveTeam = (authKey, callback) => {
 
 }
 
-const getListOfTeams = (callback) => {
+export const getListOfTeams = (callback) => {
 
   const endpoint = url + "teams"
   getFetchRequest(endpoint).then(ret => callback(ret));
