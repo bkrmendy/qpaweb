@@ -26,7 +26,7 @@ class NewsFeed extends Component {
     var postItems = []
     if (this.state.posts) {
       for (var i = 0; i<this.state.posts.length; i++){
-        postItems.push(<Post key={i} title={this.state.posts[i].title} text={this.state.posts[i].summary} /> )
+        postItems.push(<Post key={i} id={this.state.posts[i].id} title={this.state.posts[i].title} text={this.state.posts[i].summary} /> )
       }
     }
     return (

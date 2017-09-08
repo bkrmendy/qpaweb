@@ -1,23 +1,33 @@
 //UTILS
 
 const postFetchRequest = (url, body, authHeader = '') => {
-  return fetch(url,
+  return fetch(url
+    /*,
   {
     headers: {
       'Accept': 'application/json',
       'Content-Type': 'application/json',
-      'Access-Control-Allow-Origin': '*',
       'Authorization': authHeader,
     },
     method: "POST",
     body: JSON.stringify(body)
-  }).then(res => res.json())
+  }*/
+).then(res => res.json())
   .then(json => {return json})
   .catch(res => alert(res));
 }
 
 const getFetchRequest = (url, authHeader = '') => {
-  return fetch(url)
+  return fetch(url
+    /*,{
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+        'Authorization': authHeader,
+      },
+      method: "GET",
+  }*/
+)
   .then(response => response.json())
   .then(json => {return json})
   .catch(response => alert(response));
@@ -46,14 +56,18 @@ const postUserLogin = (user_email, user_password, callback) => {
 }
 
 // NEWS
-
 export const getNewsItems = (callback, pagination = true) => {
   const endpoint = url + 'news' + (pagination ? '' : '?all');
   getFetchRequest(endpoint).then(ret => {callback(ret)});
 
 }
 
-const getNewsItem = (id, callback) => {
+export const getCommentsForNewsItem = (id, callback) => {
+  const endpoint = url + "news/comments/" + id;
+  getFetchRequest(endpoint).then(ret => {callback(ret)});
+}
+
+export const getNewsItem = (id, callback) => {
 
   const endpoint = url + 'news/' + id;
   getFetchRequest(endpoint).then(ret => callback(ret));

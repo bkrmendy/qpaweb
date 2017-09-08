@@ -1,7 +1,13 @@
 import React, { Component } from 'react';
+import { withRouter } from 'react-router';
 import '../qpaweb.css'
 
 class Post extends Component {
+  constructor(){
+    super();
+    this.handleClick = this.handleClick.bind(this);
+  }
+  /*
   clickHandle(e) {
 		if(!e.currentTarget.classList.contains("opened")){
       let classes = e.currentTarget.className.split(' ');
@@ -17,12 +23,18 @@ class Post extends Component {
 			e.currentTarget.style.maxHeight = '100px';
 		}
   }
+  */
+
+  handleClick(){
+    let id = this.props.id;
+    this.props.history.push('/post/'+id);
+  }
 
   render(){
     return(
-      <div id="content__element" className="content__post" onClick={this.clickHandle}>
+      <div id="content__element" className="content__post" onClick={this.handleClick}>
         <div className="content__post-title">
-          <h2>{this.props.title}</h2>
+          <h2>{this.props.id}</h2>
         </div>
         <div className="content__post-text">
           <h4>{this.props.text}</h4>
@@ -33,4 +45,4 @@ class Post extends Component {
   }
 }
 
-export default Post;
+export default withRouter(Post);

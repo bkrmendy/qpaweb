@@ -6,10 +6,10 @@ class Comment extends Component {
     return(
       <div id="content__news-comment" className="content__news-comment">
         <div className="content__news-title">
-          <h2>{this.data.user_name}</h2>
+          <h2>{this.props.username}</h2>
         </div>
         <div className="content__news-text">
-          <h4>{this.data.comment}</h4>
+          <h4>{this.props.comment}</h4>
         </div>
       </div>
     );
