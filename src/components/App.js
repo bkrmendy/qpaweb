@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
 import MenuBar from './MenuBar.js';
+import MenuOpener from './MenuOpener.js';
 import NewsFeed from './NewsFeed.js';
 import LoginPage from './LoginWrapper.js'
 import Csapatok from './Csapatok.js'
@@ -39,7 +40,7 @@ class App extends Component {
       <img id="background_front_image" src={foreground_image} alt="foreground, looks really cool"/>
       </div>
       <MenuBar />
-
+      <MenuOpener />
       <Route exact path="/" component={NewsFeed} />
       <Route path="/news" component={NewsFeed} />
       <Route path="/sponsors" component={Sponsors} />
