@@ -10,13 +10,18 @@ a {
   text-decoration: none; }
 
 h2 {
-  font-size: 2vw;
-  text-align: center;
+  font-size: calc(18px + .5vw);
   color: #ffffff;
   font-family: "Berkshire Swash", cursive;
   align-self: center;
   text-decoration: none;
   font-weight: 400;
+  margin: 0; }
+
+h4 {
+  font-size: 12px;
+  color: #ffffff;
+  font-family: "Open Sans";
   margin: 0; }
 
 .background-img {
@@ -98,17 +103,11 @@ h2 {
     transition: max-height 0.4s ease-in-out;
     overflow: hidden; }
     .content__post-title {
-      font-size: calc(18px + .5vw);
-      text-align: left;
-      color: #ffffff;
-      margin: 1em 1em .5em 1.5em;
-      font-family: "Berkshire Swash", cursive; }
+      margin: 1em 1em .5em 1.5em; }
+      .content__post-title h2 {
+        font-size: calc(18px + .5vw); }
     .content__post-text {
-      font-size: 12px;
-      text-align: left;
-      color: #ffffff;
-      margin: 1em 2em 3em 3.5em;
-      font-family: "Open Sans"; }
+      margin: 1em 2em 3em 3.5em; }
     .content__post-fade {
       position: absolute;
       bottom: 0;
@@ -160,17 +159,9 @@ h2 {
     display: flex;
     flex-direction: column; }
     .content__news-title {
-      font-size: calc(18px + .5vw);
-      text-align: left;
-      color: #ffffff;
-      margin: 1em 1em .5em 1.5em;
-      font-family: "Berkshire Swash", cursive; }
+      margin: 1em 1em .5em 1.5em; }
     .content__news-text {
-      font-size: 12px;
-      text-align: left;
-      color: #ffffff;
-      margin: 1em 2em 3em 3.5em;
-      font-family: "Open Sans"; }
+      margin: 1em 2em 3em 3.5em; }
     .content__news-comment {
       margin: .5em .5em 0 3vw; }
 

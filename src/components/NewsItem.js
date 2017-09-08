@@ -7,10 +7,10 @@ class NewsItem extends Component {
     return(
       <div id="content__news" className="content__news">
         <div className="content__news-title">
-          {this.props.title}
+          <h2>{this.props.title}</h2>
         </div>
         <div className="content__news-text">
-          {this.props.text}
+          <h4>{this.props.text}</h4>
         </div>
         /* <Comment className="content__post-fade" /> */
       </div>

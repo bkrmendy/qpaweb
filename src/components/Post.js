@@ -22,10 +22,10 @@ class Post extends Component {
     return(
       <div id="content__element" className="content__post" onClick={this.clickHandle}>
         <div className="content__post-title">
-          {this.props.title}
+          <h2>{this.props.title}</h2>
         </div>
         <div className="content__post-text">
-          {this.props.text}
+          <h4>{this.props.text}</h4>
         </div>
         <div className="content__post-fade" />
       </div>

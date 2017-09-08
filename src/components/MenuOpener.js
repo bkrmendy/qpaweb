@@ -8,7 +8,9 @@ class MenuOpener extends Component {
 
   render() {
     return(
-      <div id="menu__opener" className="menu__opener" onClick={this.handleClick}>MENU</div>
+      <div id="menu__opener" className="menu__opener" onClick={this.handleClick}>
+        <h2>MENU</h2>
+      </div>
     );
   }
 }
