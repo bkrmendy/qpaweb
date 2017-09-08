@@ -1,11 +1,12 @@
 //@import url('https://fonts.googleapis.com/css?family=Tangerine');
+@import url('https://fonts.googleapis.com/css?family=Berkshire+Swash');
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
 
 $item_background: rgba(30, 30, 40, .8);
 $text_color: #ffffff;
 $accent_color: #2959a5;
 $text_font: "Open Sans";
-$spec_font: "Open Sans";
+$spec_font: 'Berkshire Swash', cursive;
 
 canvas {
   position: absolute;
@@ -13,6 +14,21 @@ canvas {
 
 body {
   height: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+h2 {
+  font-size: 2vw;
+  text-align: center;
+  color: $text_color;
+  font-family: $spec_font;
+  align-self: center;
+  text-decoration: none;
+  font-weight: 400;
+  margin: 0;
 }
 
 .background-img {
@@ -41,9 +57,11 @@ body {
   align-items: stretch;
   z-index: 3;
   max-height: 160px;
+  text-decoration: none;
 
   &__element-container {
-    width: 10%;
+    flex-grow: 1;
+    max-width: 12vw;
     min-width: 120px;
 
     &:hover {
@@ -56,8 +74,9 @@ body {
   &__element {
     position: relative;
     width: 100%;
-    padding: 1em .6em 40px .6em;
-    transform: translate(0, -60%);
+    height: 100%;
+    padding: 1em .6em 5vw .6em;
+    transform: translate(0, -55%);
     -webkit-transition: -webkit-transform cubic-bezier(.5,0,.3,1) .4s;
     transition: transform cubic-bezier(.5,0,.3,1) .4s;
     //background: $item_background;
@@ -66,28 +85,20 @@ body {
     cursor: pointer;
     box-sizing: border-box;
     background-image: url("./img/flags-kek-erme.png");
-    background-size: contain;
+    background-size: 100% 100%;
     background-repeat: no-repeat;
+
+    @media screen and (max-width: 1000px) {
+      font-size: 18px;
+    }
 
     img {
       object-fit: contain;
-      width: 80%;
+      width: 70%;
       position: relative;
       bottom: 0;
-      margin: 0 0 1em 0;
+      margin: 0 0 1vw 0;
       align-self: center;
-    }
-
-    a {
-      font-size: 18px;
-      text-align: center;
-      color: $text_color;
-      font-family: $text_font;
-      align-self: center;
-
-      @media screen and (max-width: 1000px) {
-        font-size: 18px;
-      }
     }
   }
 
@@ -123,7 +134,7 @@ body {
       text-align: left;
       color: $text_color;
       margin: 1em 1em .5em 1.5em;
-      font-family: $text_font;
+      font-family: $spec_font;
     }
 
     &-text {
@@ -248,6 +259,8 @@ body {
     }
 
     &__element-container {
+      flex-grow: 0;
+      max-width: none;
       width: 100%;
       height: 100%;
     }
@@ -257,6 +270,7 @@ body {
 
     &__element {
       height: 100%;
+      width: 100%;
       background: none;
       position: absolute;
       padding: 1vh 0;
@@ -271,7 +285,7 @@ body {
         margin: 0 1em 0 10%;
       }
 
-      a {
+      h2 {
         position: relative;
         font-size: 3vh;
         flex-grow: 0;

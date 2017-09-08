@@ -1,9 +1,23 @@
+@import url("https://fonts.googleapis.com/css?family=Berkshire+Swash");
 @import url("https://fonts.googleapis.com/css?family=Open+Sans");
 canvas {
   position: absolute; }
 
 body {
   height: 100%; }
+
+a {
+  text-decoration: none; }
+
+h2 {
+  font-size: 2vw;
+  text-align: center;
+  color: #ffffff;
+  font-family: "Berkshire Swash", cursive;
+  align-self: center;
+  text-decoration: none;
+  font-weight: 400;
+  margin: 0; }
 
 .background-img {
   z-index: -1;
@@ -27,17 +41,20 @@ body {
   justify-content: space-evenly;
   align-items: stretch;
   z-index: 3;
-  max-height: 160px; }
+  max-height: 160px;
+  text-decoration: none; }
   .menu__element-container {
-    width: 10%;
+    flex-grow: 1;
+    max-width: 12vw;
     min-width: 120px; }
     .menu__element-container:hover .menu__element {
       transform: translate(0, 0); }
   .menu__element {
     position: relative;
     width: 100%;
-    padding: 1em .6em 40px .6em;
-    transform: translate(0, -60%);
+    height: 100%;
+    padding: 1em .6em 5vw .6em;
+    transform: translate(0, -55%);
     -webkit-transition: -webkit-transform cubic-bezier(0.5, 0, 0.3, 1) 0.4s;
     transition: transform cubic-bezier(0.5, 0, 0.3, 1) 0.4s;
     display: flex;
@@ -45,24 +62,18 @@ body {
     cursor: pointer;
     box-sizing: border-box;
     background-image: url("./img/flags-kek-erme.png");
-    background-size: contain;
+    background-size: 100% 100%;
     background-repeat: no-repeat; }
+    @media screen and (max-width: 1000px) {
+      .menu__element {
+        font-size: 18px; } }
     .menu__element img {
       object-fit: contain;
-      width: 80%;
+      width: 70%;
       position: relative;
       bottom: 0;
-      margin: 0 0 1em 0;
+      margin: 0 0 1vw 0;
       align-self: center; }
-    .menu__element a {
-      font-size: 18px;
-      text-align: center;
-      color: #ffffff;
-      font-family: "Open Sans";
-      align-self: center; }
-      @media screen and (max-width: 1000px) {
-        .menu__element a {
-          font-size: 18px; } }
   .menu__opener {
     display: none;
     z-index: 2; }
@@ -91,7 +102,7 @@ body {
       text-align: left;
       color: #ffffff;
       margin: 1em 1em .5em 1.5em;
-      font-family: "Open Sans"; }
+      font-family: "Berkshire Swash", cursive; }
     .content__post-text {
       font-size: 12px;
       text-align: left;
@@ -135,7 +146,7 @@ body {
       margin: 20px 0;
       flex: 0 0 100%;
       color: #ffffff;
-      font-family: "Open Sans";
+      font-family: "Berkshire Swash", cursive;
       text-align: center; }
       .content__sponsors-tier.big {
         height: 1.5em;
@@ -174,16 +185,19 @@ body {
       box-sizing: border-box;
       color: #ffffff;
       background: rgba(30, 30, 40, 0.8);
-      font-family: "Open Sans";
+      font-family: "Berkshire Swash", cursive;
       cursor: pointer; }
     .menu a {
       position: relative;
       flex-grow: 1; }
     .menu__element-container {
+      flex-grow: 0;
+      max-width: none;
       width: 100%;
       height: 100%; }
     .menu__element {
       height: 100%;
+      width: 100%;
       background: none;
       position: absolute;
       padding: 1vh 0;
@@ -195,7 +209,7 @@ body {
         max-height: 100%;
         width: auto;
         margin: 0 1em 0 10%; }
-      .menu__element a {
+      .menu__element h2 {
         position: relative;
         font-size: 3vh;
         flex-grow: 0; } }

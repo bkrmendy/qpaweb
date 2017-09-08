@@ -13,7 +13,7 @@ class MenuItem extends Component {
       <div className="menu__element-container" onClick={this.handleClick}>
         <div id="menu__element" className="menu__element">
           <img src={this.props.src} alt="background_image" />
-          <a>{this.props.title}</a>
+          <h2>{this.props.title}</h2>
         </div>
       </div>
       </Link>
