@@ -2,16 +2,19 @@
 
 const postFetchRequest = (url, body, authHeader = '') => {
   return fetch(url
-    /*,
+  ,
   {
+    mode: 'cors',
     headers: {
       'Accept': 'application/json',
       'Content-Type': 'application/json',
+      'Host': 'http://sch-qpa.ml',
+      'Access-Control-Allow-Origin': '*',
       'Authorization': authHeader,
     },
     method: "POST",
     body: JSON.stringify(body)
-  }*/
+  }
 ).then(res => res.json())
   .then(json => {return json})
   .catch(res => alert(res));
@@ -19,16 +22,18 @@ const postFetchRequest = (url, body, authHeader = '') => {
 
 const getFetchRequest = (url, authHeader = '') => {
   return fetch(url
-    /*,{
+    ,{
+      mode: 'cors',
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json',
+        'Host': 'http://sch-qpa.ml/',
+        'Access-Control-Allow-Origin': '*',
         'Authorization': authHeader,
       },
       method: "GET",
-  }*/
-)
-  .then(response => response.json())
+  }
+).then(response => response.json())
   .then(json => {return json})
   .catch(response => alert(response));
 }
@@ -42,7 +47,7 @@ const url = 'https://sch-qpa.ml/api/';
 const postMobileAuth = (user_email, user_password, callback) => {
 
   const endpoint = url + 'auth/mobile';
-  var body = {email: user_email, b: user_password};
+  var body = {email: user_email, password: user_password};
   postFetchRequest(endpoint, body).then(ret => callback(ret));
 
 }
@@ -50,7 +55,7 @@ const postMobileAuth = (user_email, user_password, callback) => {
 const postUserLogin = (user_email, user_password, callback) => {
 
   const endpoint = url + 'auth/login';
-  const body = {email: user_email, b: user_password};
+  const body = {email: user_email, password: user_password};
   postFetchRequest(endpoint, body).then(ret => callback(ret));
 
 }
@@ -211,7 +216,7 @@ const postCreateUser = (userName, userNick, userEmail, userPw, userPw_conf, call
 
 const getCurrentUserInfo = (authToken, callback) => {
   const endpoint = url + 'users/me';
-  const authHeader = 'Bearer ' + authToken;
+  const authHeader = 'Bearer ' + btoa(authToken);
   getFetchRequest(endpoint, authHeader).then(ret => callback(ret));
 }
 
