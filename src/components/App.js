@@ -4,7 +4,7 @@ import MenuBar from './MenuBar.js';
 import MenuOpener from './MenuOpener.js';
 import NewsFeed from './NewsFeed.js';
 import LoginPage from './LoginWrapper.js'
-import Csapatok from './Csapatok.js'
+import Csapatok, { Csapat, NewCsapat } from './Csapatok.js'
 import Meres from './Meres.js'
 import Info from './Info.js'
 import Achievementek from './Achievementek.js'
@@ -48,7 +48,8 @@ class App extends Component {
       <Route path="/sponsors" component={Sponsors} />
       <Route path="/login" component={()=>(<LoginPage login={() => this.login()} />)} />
       <Route path="/csapatok" component={() => (<PriveteRoute loggedIn={this.state.loggedIn} component={<Csapatok />} />)}/>
-      <Route path="/csapat/:id" component={() => (<PriveteRoute loggedIn={this.state.loggedIn} component={<Csapatok />} />)}/>
+      <Route path="/csapat/:id" component={() => (<PriveteRoute loggedIn={this.state.loggedIn} component={<Csapat />} />)}/>
+      <Route path="/csapat/new" component={() => (<PriveteRoute loggedIn={this.state.loggedIn} component={<NewCsapat />} />)}/>
       <Route path="/meres" component={() => (<PriveteRoute loggedIn={this.state.loggedIn} component={<Meres />} />)}/>
       <Route path="/info" component={() => (<PriveteRoute loggedIn={this.state.loggedIn} component={<Info />} />)}/>
       <Route path="/achievements" component={() => (<PriveteRoute loggedIn={this.state.loggedIn} component={<Achievementek />} />)}/>

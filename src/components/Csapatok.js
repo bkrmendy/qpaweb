@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { getListOfTeams } from '../api.js';
+import { getListOfTeams, postCreateNewTeam } from '../api.js';
 import { withRouter } from 'react-router'
 import '../qpaweb.css';
 
@@ -12,7 +12,7 @@ class Csapatok extends Component {
 	}
 
 	buttonClick = () => {
-		alert("added new team");
+		this.props.history.push('/csapat/new');
 	}
 
 	componentDidMount = () => {
@@ -71,6 +71,54 @@ const CsapatRow = (props) => {
 			</div>
 		</div>
 	)
+}
+
+export class Csapat extends Component {
+  constructor(){
+    super();
+    this.state = {
+      id: null,
+      name: null,
+      score: null,
+      members: null,
+      joined: null,
+    }
+  }
+
+  componentDidMount(){
+    var id = this.props.match.params.id;
+    //update state here
+  }
+
+  setMembers = (json) => {
+    this.setState({...this.state, members: json.data});
+  }
+
+  setTeamData = (json) => {
+    this.setState({...this.state, name: json.name, score: json.sumOfPoints, id: json.id,})
+  }
+
+  render(){
+    var members = []
+    if (this.state.members) {
+      for (var i = 0; i < this.state.members.length; i++) {
+        members.push(<h3>{this.state.members[i].name}</h3>);
+      }
+    }
+    return(
+			<div>
+      <h1>{this.state.name}</h1>
+      <h1>{this.state.score}</h1>
+      <div>
+      {members}
+      </div>
+			</div>
+    );
+  }
+}
+
+export class NewCsapat  extends Component {
+
 }
 
 export default withRouter(Csapatok);

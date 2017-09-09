@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-
 import { getNewsItems } from '../api.js';
 
 import '../qpaweb.css'
