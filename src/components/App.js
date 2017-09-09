@@ -47,58 +47,23 @@ class App extends Component {
       <Route path="/post/:id" component={NewsItem} />
       <Route path="/sponsors" component={Sponsors} />
       <Route path="/login" component={()=>(<LoginPage login={() => this.login()} />)} />
-      <Route path="/csapatok" render={()=> {
-        if (this.state.loggedIn === true) {
-          return <Csapatok />;
-        }
-        else {
-          return <Redirect to="/login" />;
-        }
-      }}/>
-      <Route path="/meres" render={()=> {
-        if (this.state.loggedIn === true) {
-          return <Meres />;
-        }
-        else {
-          return <Redirect to="/login" />;
-        }
-      }}/>
-      <Route path="/info" render={()=> {
-        if (this.state.loggedIn === true) {
-          return <Info />;
-        }
-        else {
-          return <Redirect to="/login" />;
-        }
-      }}/>
-      <Route path="/achievements" render={()=> {
-        if (this.state.loggedIn === true) {
-          return <Achievementek />;
-        }
-        else {
-          return <Redirect to="/login" />;
-        }
-      }}/>
-      <Route path="/riddles" render={()=> {
-        if (this.state.loggedIn === true) {
-          return <Riddles />;
-        }
-        else {
-          return <Redirect to="/login" />;
-        }
-      }}/>
-      <Route path="/swarm" render={()=> {
-        if (this.state.loggedIn === true) {
-          return <Swarm />;
-        }
-        else {
-          return <Redirect to="/login" />;
-        }
-      }}/>
+      <Route path="/csapatok" component={() => (<PriveteRoute loggedIn={this.state.loggedIn} component={<Csapatok />} />)}/>
+      <Route path="/meres" component={() => (<PriveteRoute loggedIn={this.state.loggedIn} component={<Meres />} />)}/>
+      <Route path="/info" component={() => (<PriveteRoute loggedIn={this.state.loggedIn} component={<Info />} />)}/>
+      <Route path="/achievements" component={() => (<PriveteRoute loggedIn={this.state.loggedIn} component={<Achievementek />} />)}/>
+      <Route path="/riddles" component={() => (<PriveteRoute loggedIn={this.state.loggedIn} component={<Riddles />} />)}/>
+      <Route path="/swarm" component={() => (<PriveteRoute loggedIn={this.state.loggedIn} component={<Swarm />} />)}/>
       </div>
       </Router>
     );
   }
+}
+
+const PriveteRoute = (props) => {
+  if (props.loggedIn === true) {
+    return props.component;
+  }
+  return <Redirect to="/login" />;
 }
 
 export default App;
