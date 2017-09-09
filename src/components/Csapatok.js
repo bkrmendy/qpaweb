@@ -60,12 +60,12 @@ class Csapatok extends Component {
 
 const CsapatRow = (props) => {
 	return (
-		<div onClick={()=>props.onClick(props.id)}>
-			<div>
-				<h1>{props.name}</h1>
-				<h1>{props.score}</h1>
-				<h1>{props.id}</h1>
+		<div className="content__team" onClick={()=>props.onClick(props.id)}>
+			<div className="content__team-info">
+				<h2><h4>Csapatnév: </h4>{props.name}</h2>
+				<div><h4>Id: {props.id}</h4></div>
 			</div>
+				<h2><h4>Pontszám: </h4>{props.score}</h2>
 			<div>
 				<p>{props.description}</p>
 			</div>
