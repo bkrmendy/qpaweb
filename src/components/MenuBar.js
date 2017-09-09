@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import MenuItem from './MenuItem.js';
+import { Link } from 'react-router-dom';
 import image from '../img/image.png';
 import '../qpaweb.css';
 
@@ -19,6 +19,25 @@ class MenuBar extends Component {
         */}
         <MenuItem title="Login" src={image} to="/login"/>
       </center>
+    );
+  }
+}
+
+class MenuItem extends Component {
+  handleClick(e) {
+    document.getElementById('menu').classList.remove('opened');
+  }
+
+  render() {
+    return(
+      <Link to={this.props.to}>
+      <div className="menu__element-container" onClick={this.handleClick}>
+        <div id="menu__element" className="menu__element">
+          <img src={this.props.src} alt="background_image" />
+          <h2>{this.props.title}</h2>
+        </div>
+      </div>
+      </Link>
     );
   }
 }

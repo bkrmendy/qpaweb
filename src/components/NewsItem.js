@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Comment from './Comment.js';
 import { getCommentsForNewsItem, getNewsItem } from '../api.js';
 import '../qpaweb.css';
 
@@ -53,6 +52,19 @@ class NewsItem extends Component {
       </div>
     );
   }
+}
+
+const Comment = (props) => {
+    return(
+      <div id="content__news-comment" className="content__news-comment">
+        <div className="content__news-title">
+          <h2>{props.username}</h2>
+        </div>
+        <div className="content__news-text">
+          <h4>{props.comment}</h4>
+        </div>
+      </div>
+    );
 }
 
 export default NewsItem;

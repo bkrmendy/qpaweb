@@ -8,11 +8,8 @@ class LoginPage extends Component {
       alert(data.username + ", your quest has not begun yet...");
     };
     loginWasClickedCallback = (data) => {
-      /*
       this.props.login()
       this.props.history.push('/news');
-      console.log(this);
-      */
       alert(data.username + ", your quest has not begun yet...");
     };
     recoverPasswordWasClickedCallback = (data) => {
