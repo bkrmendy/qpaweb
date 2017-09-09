@@ -11,7 +11,7 @@ class Csapatok extends Component {
 		}
 	}
 
-	onClick = () => {
+	buttonClick = () => {
 		alert("added new team");
 	}
 
@@ -23,21 +23,32 @@ class Csapatok extends Component {
 		this.setState({teams: json.data});
 	}
 
-
+	onClick = (id) => {
+		this.props.history.push('/csapat/'+id);
+	}
 
 	render(){
 		var teams = [];
 		if (this.state.teams) {
 			for (var i = 0; i < this.state.teams.length; i++) {
 				var elem = this.state.teams[i];
-				teams.push(<CsapatRow key={i} name={elem.name} score={elem.sumOfPoints} description={"Awesome team!"} />);
+				teams.push(
+					<CsapatRow
+					key={i}
+					id={elem.id}
+					name={elem.name}
+					score={elem.sumOfPoints}
+					description={"Awesome team!"}
+					onClick={this.onClick}/>
+
+				);
 			}
 		}
 		return(
 			<div className="content" id="content">
 				<div>
 					<h1> Csapatok </h1>
-					<button onClick={this.onClick}>+</button>
+					<button onClick={this.buttonClick}>+</button>
 				</div>
 				<div>
 					{teams}
@@ -49,10 +60,11 @@ class Csapatok extends Component {
 
 const CsapatRow = (props) => {
 	return (
-		<div>
+		<div onClick={()=>props.onClick(props.id)}>
 			<div>
 				<h1>{props.name}</h1>
 				<h1>{props.score}</h1>
+				<h1>{props.id}</h1>
 			</div>
 			<div>
 				<p>{props.description}</p>

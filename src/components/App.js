@@ -48,6 +48,7 @@ class App extends Component {
       <Route path="/sponsors" component={Sponsors} />
       <Route path="/login" component={()=>(<LoginPage login={() => this.login()} />)} />
       <Route path="/csapatok" component={() => (<PriveteRoute loggedIn={this.state.loggedIn} component={<Csapatok />} />)}/>
+      <Route path="/csapat/:id" component={() => (<PriveteRoute loggedIn={this.state.loggedIn} component={<Csapatok />} />)}/>
       <Route path="/meres" component={() => (<PriveteRoute loggedIn={this.state.loggedIn} component={<Meres />} />)}/>
       <Route path="/info" component={() => (<PriveteRoute loggedIn={this.state.loggedIn} component={<Info />} />)}/>
       <Route path="/achievements" component={() => (<PriveteRoute loggedIn={this.state.loggedIn} component={<Achievementek />} />)}/>
