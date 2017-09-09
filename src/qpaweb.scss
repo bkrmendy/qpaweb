@@ -37,6 +37,35 @@ h4 {
   margin: 0;
 }
 
+#main-wrapper {
+  background-color: $item_background !important;
+  width: 75vw !important;
+  border: 1px solid rgba(24, 24, 32, .8) !important;
+
+  h1 {
+    font-size: calc(24px + .5vw) !important;
+    line-height: 1.1em !important;
+    color: $text_color !important;
+    font-family: $spec_font !important;
+    font-weight: 400 !important;
+  }
+
+  button,
+  input {
+    box-shadow: rgb(24, 24, 32) 0px 0px 10px 0px inset;
+    background: $item_background;
+    border: 1px solid rgb(24, 24, 32);
+    display: inline-block;
+    cursor: pointer;
+    color: rgb(255, 255, 255);
+    font-family: Arial;
+    font-size: 15px;
+    padding: 6px 13px;
+    text-decoration: none;
+    text-shadow: rgb(38, 54, 102) 0px 1px 0px;
+  }
+}
+
 .background-img {
   z-index: -1;
   position: fixed;

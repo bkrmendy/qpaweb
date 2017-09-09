@@ -24,6 +24,30 @@ h4 {
   font-family: "Open Sans";
   margin: 0; }
 
+#main-wrapper {
+  background-color: rgba(30, 30, 40, 0.8) !important;
+  width: 75vw !important;
+  border: 1px solid rgba(24, 24, 32, 0.8) !important; }
+  #main-wrapper h1 {
+    font-size: calc(24px + .5vw) !important;
+    line-height: 1.1em !important;
+    color: #ffffff !important;
+    font-family: "Berkshire Swash", cursive !important;
+    font-weight: 400 !important; }
+  #main-wrapper button,
+  #main-wrapper input {
+    box-shadow: #181820 0px 0px 10px 0px inset;
+    background: rgba(30, 30, 40, 0.8);
+    border: 1px solid #181820;
+    display: inline-block;
+    cursor: pointer;
+    color: white;
+    font-family: Arial;
+    font-size: 15px;
+    padding: 6px 13px;
+    text-decoration: none;
+    text-shadow: #263666 0px 1px 0px; }
+
 .background-img {
   z-index: -1;
   position: fixed;
