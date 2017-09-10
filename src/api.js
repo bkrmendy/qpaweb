@@ -17,7 +17,7 @@ const postFetchRequest = (url, body, authHeader = '') => {
   }
 ).then(res => res.json())
   .then(json => {return json})
-  .catch(res => alert(res));
+  .catch(res => console.log(res));
 }
 
 const getFetchRequest = (url, authHeader = '') => {
@@ -35,7 +35,7 @@ const getFetchRequest = (url, authHeader = '') => {
   }
 ).then(response => response.json())
   .then(json => {return json})
-  .catch(response => alert(response));
+  .catch(response => console.log(response));
 }
 
 const url = 'https://sch-qpa.ml/api/';
