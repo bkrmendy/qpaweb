@@ -9,10 +9,9 @@ class NewsFeed extends Component {
     this.state = {
       posts: null,
     }
-    this.update = this.update.bind(this);
   }
 
-  update(json){
+  update = (json) => {
     this.setState({posts: json.data});
   }
 

@@ -5,6 +5,7 @@ import '../qpaweb.css';
 
 class MenuBar extends Component {
   render(){
+
     return(
       <center id="menu" className="menu">
         <MenuItem title="Hírek" src={image} to="/news"/>
@@ -17,7 +18,12 @@ class MenuBar extends Component {
         <MenuItem title="Riddles" src={image} to="/riddles"/>
         <MenuItem title="Swarm" src={image} to="/swarm"/>
         */}
-        <MenuItem title="Login" src={image} to="/login"/>
+        {
+          (this.props.loggedIn === true) ?
+          <MenuItem title="Profil" src={image} to="/me"/>
+        :
+          <MenuItem title="Login" src={image} to="/login"/>
+        }
       </center>
     );
   }

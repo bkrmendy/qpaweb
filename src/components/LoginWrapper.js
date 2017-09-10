@@ -7,11 +7,12 @@ class LoginPage extends Component {
     signupWasClickedCallback = (data) => {
       alert(data.username + ", your quest has not begun yet...");
     };
+
     loginWasClickedCallback = (data) => {
-      this.props.login()
+      this.props.login(data.username, data.password)
       this.props.history.push('/news');
-      alert(data.username + ", your quest has not begun yet...");
     };
+
     recoverPasswordWasClickedCallback = (data) => {
       alert(data.username + ", your quest has not begun yet...");
     };

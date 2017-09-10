@@ -4,12 +4,11 @@ const postFetchRequest = (url, body, authHeader = '') => {
   return fetch(url
   ,
   {
+    credentials: 'omit',
     mode: 'cors',
     headers: {
       'Accept': 'application/json',
       'Content-Type': 'application/json',
-      'Host': 'http://sch-qpa.ml',
-      'Access-Control-Allow-Origin': '*',
       'Authorization': authHeader,
     },
     method: "POST",
@@ -23,12 +22,11 @@ const postFetchRequest = (url, body, authHeader = '') => {
 const getFetchRequest = (url, authHeader = '') => {
   return fetch(url
     ,{
+      credentials: 'omit',
       mode: 'cors',
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json',
-        'Host': 'http://sch-qpa.ml/',
-        'Access-Control-Allow-Origin': '*',
         'Authorization': authHeader,
       },
       method: "GET",
@@ -52,8 +50,7 @@ const postMobileAuth = (user_email, user_password, callback) => {
 
 }
 
-const postUserLogin = (user_email, user_password, callback) => {
-
+export const postUserLogin = (user_email, user_password, callback) => {
   const endpoint = url + 'auth/login';
   const body = {email: user_email, password: user_password};
   postFetchRequest(endpoint, body).then(ret => callback(ret));
@@ -214,9 +211,9 @@ const postCreateUser = (userName, userNick, userEmail, userPw, userPw_conf, call
   postFetchRequest(endpoint, body).then(ret => callback(ret));
 }
 
-const getCurrentUserInfo = (authToken, callback) => {
+export const getCurrentUserInfo = (authToken, callback) => {
   const endpoint = url + 'users/me';
-  const authHeader = 'Bearer ' + btoa(authToken);
+  const authHeader = 'Bearer ' + authToken;
   getFetchRequest(endpoint, authHeader).then(ret => callback(ret));
 }
 

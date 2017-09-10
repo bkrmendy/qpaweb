@@ -12,7 +12,7 @@ class Csapatok extends Component {
 	}
 
 	buttonClick = () => {
-		this.props.history.push('/csapat/new');
+		this.props.history.push('/csapatok/new');
 	}
 
 	componentDidMount = () => {
@@ -48,12 +48,13 @@ class Csapatok extends Component {
 			<div className="content" id="content">
 				<div>
 					<h1> Csapatok </h1>
-					<button onClick={this.buttonClick}>+</button>
 				</div>
 				<div>
 					{teams}
 				</div>
+				<button onClick={this.buttonClick}>+</button>
 			</div>
+
 		);
 	}
 }
@@ -85,9 +86,9 @@ export class Csapat extends Component {
     }
   }
 
-  componentDidMount(){
-    var id = this.props.match.params.id;
-    //update state here
+	componentDidMount = () => {
+		var id = this.props.match.params;
+
   }
 
   setMembers = (json) => {
@@ -106,9 +107,9 @@ export class Csapat extends Component {
       }
     }
     return(
-			<div>
-      <h1>{this.state.name}</h1>
-      <h1>{this.state.score}</h1>
+			<div className="content">
+      <h1>TEAM NAME</h1>
+      <h1>TEAM SCORE</h1>
       <div>
       {members}
       </div>
@@ -118,7 +119,17 @@ export class Csapat extends Component {
 }
 
 export class NewCsapat  extends Component {
+	constructor(){
+		super();
+	}
 
+	render(){
+		return(
+			<div className="content">
+				<h1>REGISTER NEW TEAM</h1>
+			</div>
+		);
+	}
 }
 
 export default withRouter(Csapatok);

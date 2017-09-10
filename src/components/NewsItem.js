@@ -9,7 +9,6 @@ class NewsItem extends Component {
       title: "",
       comment: "",
       comments: null,
-
     }
   }
 
