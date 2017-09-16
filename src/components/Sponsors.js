@@ -25,6 +25,7 @@ export default class Sponsors extends Component {
           <div id="tier2" className="content__sponsors-tier small">Támogatók</div>
           <div id="sp5" className="content__sponsors-item small"><img src={schlogo} alt="sponsor-logo"/></div>
           <div id="sp6" className="content__sponsors-item small"><img src={vikhk} alt="sponsor-logo"/></div>
+          <div id="sp6" className="content__sponsors-item small"><img src={eset} alt="sponsor-logo"/></div>
           <div id="tier2" className="content__sponsors-tier small">Partnerek</div>
           <div id="sp5" className="content__sponsors-item small"><img src={isk} alt="sponsor-logo"/></div>
           <div id="sp6" className="content__sponsors-item small"><img src={scinet} alt="sponsor-logo"/></div>

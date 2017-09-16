@@ -25,11 +25,11 @@ class App extends Component {
   constructor(){
     super();
     this.state = {
-      loggedIn: false,
+      loggedIn: true,
       accessToken: null,
       userInfo: {
-        name: null,
-        nickName: null,
+        name: "Bro",
+        nickName: "Dude",
         leader: null,
         teamAccepted: null,
         teamID: null,
@@ -88,7 +88,7 @@ class App extends Component {
       <Route path="/csapat/:id" component={Csapat }/>
       <Route path="/sponsors" component={Sponsors} />
       <Route path="/login" component={()=>(<LoginPage login={this.login} />)} />
-      <Route path="/me" component={() => (<PriveteRoute loggedIn={this.state.loggedIn} component={<Profile />} />)}/>
+      <Route path="/me" component={() => (<PriveteRoute loggedIn={this.state.loggedIn} component={<Profile userInfo={this.state.userInfo}/>} />)}/>
       <Route path="/csapatok" component={() => (<PriveteRoute loggedIn={this.state.loggedIn} component={<Csapatok />} />)}/>
       <Route path="/csapatok/new" component={() => (<PriveteRoute loggedIn={this.state.loggedIn} component={<NewCsapat />} />)}/>
       <Route path="/meres" component={() => (<PriveteRoute loggedIn={this.state.loggedIn} component={<Meres />} />)}/>

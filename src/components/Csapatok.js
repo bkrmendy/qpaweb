@@ -118,7 +118,7 @@ export class Csapat extends Component {
   }
 }
 
-export class NewCsapat  extends Component {
+export class NewCsapat extends Component {
 	constructor(){
 		super();
 	}
